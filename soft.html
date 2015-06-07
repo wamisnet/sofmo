@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Sofmoプログラム</title>
+
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <script src="js/SofmoFsk.js" type="text/javascript"></script>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+    <body>
+
+
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="index.html" class="navbar-brand">Sofmo</a>
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar-main">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="soft.html">プログラム</a>
+                        </li>
+                        <li>
+                            <a href="hard.html">Sofmoハードウェア</a>
+                        </li>
+                        <li>
+                            <a href="index.html">作品ライブラリ(準備中)</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="page-header" id="banner">
+                <div class="row">
+                    <div class="col-lg-8 col-md-7 col-sm-6 col-xs-8">
+                        <h1>Sofmo</h1> 
+                        <p class="lead">Sofmoとは音で通信するarduino互換</p>     
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 id="buttons">Sofmoのプログラム</h2>
+                    </div>
+                </div>         
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 id="buttons">Sofmo</h2>
+                    <H4>Sofmoのlibraryは、こちらから<a href="data/SoftModem-001.zip">ダウンロード</a></H4>
+                    <p>注意</p>
+                    <p>Sofmoの機能であるイヤホンジャック通信を利用する際、D3、D6、D7ピンを使用します。プログラムする際は注意してください。</p>                        
+                    <h2 id="buttons">Android</h2>
+                    <!-- Place this tag in your head or just before your close body tag. -->
+                    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+                    <!-- Place this tag where you want the widget to render. -->
+                    <div class="g-post" data-href="https://plus.google.com/108903233619967417797/posts/BTkkAgvPgbZ"></div>
+                    <h2 id="buttons">Web(javascript)</h2>
+                    <br><p>Sofmoの通信をjavascriptで実現しました。NeoCatさんの作品です。</p>
+                    <form onsubmit="generate($('data').value);
+                            return false;">
+                        入力してみてください: <input type="text" id="data" size="40" value="Hello!">
+                        <input type="submit" value="Generate and Send" >
+                        <input type="button" value="Jump to Audio data" id="jmp" disabled="true" onclick="location.href = dataURI">
+                    </form>
+
+                </div>
+            </div>         
+
+
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 id="buttons">Sofmoのスケッチアップロードについて</h2>
+                    </div>
+                </div>              
+            </div>
+            <div class="col-lg-12">
+                <p>Windowsの場合は<a href="http://www.arduino.cc/en/Main/Software">ArduinoIDE</a>をインストールしたのち、書き込み時arduinoproを選ぶか、</p>
+                <p>こちらの<a href="data/64or32bit.zip">バッチファイル</a>を実行してもらえば、ツールの中のボードにSofmoが追加されるのでそれを選んで書き込んでもらうこともできます！</p>
+                <div class="row">
+                    <figure>
+                        <legend>Arduino Pro 328(3.3v,8MHz)で試すとき</legend>
+                        <img src="pic/ArdP.jpg" alt="" class="col-lg-8 col-md-7 col-sm-6 col-xs-8"/>
+                        <br>
+                    </figure>
+                    <figure>
+                        <legend>Batファイルを実行してから、Sofmoで試すとき</legend>
+                        <img src="pic/SofA.jpg" alt="" class="col-lg-8 col-md-7 col-sm-6 col-xs-8"/>
+                    </figure>
+                </div>
+                <br>
+                <p>Sofmoのusbシールドはfl232rを使っています。ドライバーをダウンロードしてください。</p>
+                <p>追加でUSB aをつけた方はこちらのアプリを使うとAndroidからプログラムを書くことができます。</p>
+                <a href="https://play.google.com/store/apps/details?id=com.physicaloid.app.writer">https://play.google.com/store/apps/details?id=com.physicaloid.app.writer</a>
+            </div>
+
+        </div>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-62256925-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

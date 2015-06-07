@@ -8,7 +8,7 @@
 */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
-  font-family: sans-serif;
+  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -40,6 +40,14 @@ video {
 audio:not([controls]) {
   display: none;
   height: 0;
+}
+#pic{
+    margin-top: 30px;
+width: 225px; height: 150px
+}
+#picv {
+    
+width: 80%; height: 80%;
 }
 [hidden],
 template {
