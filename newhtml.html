@@ -14,7 +14,7 @@ and open the template in the editor.
         <div>milkcocoa と ESP8266つないでみた</div>
         
         <form action="newhtml.html" method="get">
-    <p><label>action ID ：<input type="text" name="mode_setting" size="3"></label></p>
+    <p><label>action ID ：<input type="number" name="mode_setting" size="3"></label></p>
     <p><label>Pin       ：<input type="number" name="pin" size="3"></label></p>
     <p><label>State     ：<input type="text" name="state" size="20"></label></p>
     <input type="button" value="送信" onclick="return chk2(this.form)" /><!-- 通常ボタン -->
@@ -23,7 +23,8 @@ and open the template in the editor.
 <script type="text/javascript">
     function chk2(frm){
         var milkcocoa = new MilkCocoa('leadii5pbr0b.mlkcca.com');
-        var mode,pin,state;
+        var mode,pin;
+        var state;
         alert(frm.elements["state"].value);
         if(frm.elements["state"].value=="")
             state="0";
