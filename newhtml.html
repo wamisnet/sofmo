@@ -40,7 +40,7 @@ and open the template in the editor.
         }else{
             /* submitメソッドでフォーム送信 */
             var ds = milkcocoa.dataStore('arduino');
-            ds.push({mode_setting : frm.elements["mode_setting"].value, pin : pin,state : state});
+            ds.push({mode:frm.elements["mode_setting"].value,pin: pin,state:state});
             frm.submit();
         }
     }
