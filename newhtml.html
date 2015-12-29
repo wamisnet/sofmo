@@ -12,7 +12,11 @@ and open the template in the editor.
     </head>
     <body>
         <div>milkcocoa と ESP8266つないでみた!</div>
-        
+        <p>action ID:モード名：引数になるもの</p>
+        <p>1:pinMode    state:OUTPUT (1) INPUT (0)</br>2:pinPullup  pin:D0,D1,D2,D3,D4,D5</br>3:digitalRead   pin:D0,D1,D2,D3,D4,D5</br>4:digitalWrite   state:HIGH (1) LOW (0)</br>
+            5:analogRead</br>6:analogWrite  state:0-255 pin:D2,D3,D4</br>7:uartMode state:9600,14400,19200,28800,38400,57600,115200</br>8:uartWrite state:文字</br>
+            9:uratRead</br>10:reset</br>11:sleep    state:秒数</br>
+        </p>
         <form action="newhtml.html" method="get">
     <p><label>action ID ：<input type="number" name="mode_setting" size="3"></label></p>
     <p><label>Pin       ：<input type="number" name="pin" size="3"></label></p>
