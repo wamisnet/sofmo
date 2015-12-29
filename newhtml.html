@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>milkcocoa と ESP8266つないでみた</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>milkcocoa と ESP8266つないでみた</div>
+        
+        <form action="newhtml.html" method="get">
+    <p><label>action ID ：<input type="text" name="mode_setting" size="3"></label></p>
+    <p><label>Pin       ：<input type="text" name="pin" size="3"></label></p>
+    <p><label>State     ：<input type="text" name="state" size="20"></label></p>
+    <input type="button" value="送信" onclick="return chk2(this.form)" /><!-- 通常ボタン -->
+</form>
+<script src="http://cdn.mlkcca.com/v2.0.0/milkcocoa.js"></script>
+<script type="text/javascript">
+    function chk2(frm){
+        var milkcocoa = new MilkCocoa('leadii5pbr0b.mlkcca.com');
+        var mode,pin,state;
+        if(frm.elements["state"].value=="")
+            state=0;
+        else
+            state=frm.elements["mode_setting"].value;
+        
+        if(frm.elements["pin"].value=="")
+            pin=0;
+        else
+            pin=frm.elements["pin"].value;
+        if(frm.elements["mode_setting"].value==""){
+            alert("action IDを入力してください");
+        }else{
+            /* submitメソッドでフォーム送信 */
+            var ds = milkcocoa.dataStore('arduino');
+            ds.push({mode_setting : frm.elements["mode_setting"].value, pin : pin,state : state});
+            frm.submit();
+        }
+    }
+</script>
+    </body>
+</html>
