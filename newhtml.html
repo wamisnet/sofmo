@@ -12,42 +12,110 @@ and open the template in the editor.
     </head>
     <body>
         <div>milkcocoa と ESP8266つないでみた!</div>
-        <p>action ID:モード名：引数になるもの</p>
-        <p>1:pinMode    state:OUTPUT (1) INPUT (0)</br>2:pinPullup  pin:D0,D1,D2,D3,D4,D5</br>3:digitalRead   pin:D0,D1,D2,D3,D4,D5</br>4:digitalWrite   state:HIGH (1) LOW (0)</br>
-            5:analogRead</br>6:analogWrite  state:0-255 pin:D2,D3,D4</br>7:uartMode state:9600,14400,19200,28800,38400,57600,115200</br>8:uartWrite state:文字</br>
-            9:uratRead</br>10:reset</br>11:sleep    state:秒数</br>
+
+        <table border="1" width="700" cellspacing="0" cellpadding="5" bordercolor="#333333">
+            <tr><th bgcolor="#EE0000"><font color="#FFFFFF">action ID</font></th>
+                <th bgcolor="#EE0000" width="150"><font color="#FFFFFF">モード名</font></th>
+                <th bgcolor="#EE0000" width="200"><font color="#FFFFFF">引数になるもの</font></th>
+                <th bgcolor="#EE0000" width="200"><font color="#FFFFFF">戻り値になるもの</font></th>
+            </tr>
+            <tr>
+                <td bgcolor="#99CC00" align="right" nowrap>1</td>
+                <td bgcolor="#FFFFFF" valign="top" width="150">pinMode</td>
+                <td bgcolor="#FFFFFF" valign="top" width="200">state:OUTPUT (1) INPUT (0)</td>
+                 <td bgcolor="#FFFFFF" valign="top" width="180">なし</td>
+            </tr>
+<tr>
+                <td bgcolor="#99CC00" align="right" nowrap>2</td>
+                <td bgcolor="#FFFFFF" valign="top" width="150">pinPullup</td>
+                <td bgcolor="#FFFFFF" valign="top" width="200">pin:D0,D1,D2,D3,D4,D5</td>
+                <td bgcolor="#FFFFFF" valign="top" width="180">なし</td>
+            </tr>   
+<tr>
+                <td bgcolor="#99CC00" align="right" nowrap>3</td>
+                <td bgcolor="#FFFFFF" valign="top" width="150">digitalRead</td>
+                <td bgcolor="#FFFFFF" valign="top" width="200">pin:D0,D1,D2,D3,D4,D5</td>
+                <td bgcolor="#FFFFFF" valign="top" width="180">HIGH (1) LOW (0)</td>
+            </tr>   
+<tr>
+                <td bgcolor="#99CC00" align="right" nowrap>4</td>
+                <td bgcolor="#FFFFFF" valign="top" width="150">digitalWrite</td>
+                <td bgcolor="#FFFFFF" valign="top" width="200">state:HIGH (1) LOW (0)</td>
+                <td bgcolor="#FFFFFF" valign="top" width="180">なし</td>
+            </tr>   
+<tr>
+                <td bgcolor="#99CC00" align="right" nowrap>5</td>
+                <td bgcolor="#FFFFFF" valign="top" width="150">analogRead(A0)</td>
+                <td bgcolor="#FFFFFF" valign="top" width="200">なし</td>
+                <td bgcolor="#FFFFFF" valign="top" width="180">A0のアナログ入力</td>>
+            </tr>   
+<tr>
+                <td bgcolor="#99CC00" align="right" nowrap>6</td>
+                <td bgcolor="#FFFFFF" valign="top" width="150">analogWrite</td>
+                <td bgcolor="#FFFFFF" valign="top" width="200">state:0-255 pin:D2,D3,D4(0)</td>
+                <td bgcolor="#FFFFFF" valign="top" width="180">なし</td>
+            </tr>   
+<tr>
+                <td bgcolor="#99CC00" align="right" nowrap>7</td>
+                <td bgcolor="#FFFFFF" valign="top" width="150">uartMode</td>
+                <td bgcolor="#FFFFFF" valign="top" width="200">state:9600,14400,19200,28800,38400,57600,115200</td>
+                <td bgcolor="#FFFFFF" valign="top" width="180">なし</td>
+            </tr>   <tr>
+                <td bgcolor="#99CC00" align="right" nowrap>8</td>
+                <td bgcolor="#FFFFFF" valign="top" width="150">uartWrite</td>
+                <td bgcolor="#FFFFFF" valign="top" width="200">state:文字</td>
+                <td bgcolor="#FFFFFF" valign="top" width="180">なし</td>
+            </tr>   <tr>
+                <td bgcolor="#99CC00" align="right" nowrap>9</td>
+                <td bgcolor="#FFFFFF" valign="top" width="150">uratRead</td>
+                <td bgcolor="#FFFFFF" valign="top" width="200">なし</td>
+                <td bgcolor="#FFFFFF" valign="top" width="180">文字、文字列</td>
+            </tr>   
+            <tr>
+                <td bgcolor="#99CC00" align="right" nowrap>10</td>
+                <td bgcolor="#FFFFFF" valign="top" width="150">reset</td>
+                <td bgcolor="#FFFFFF" valign="top" width="200">なし</td>
+                <td bgcolor="#FFFFFF" valign="top" width="180">なし</td>
+            </tr>   
+            <tr>
+                <td bgcolor="#99CC00" align="right" nowrap>11</td>
+                <td bgcolor="#FFFFFF" valign="top" width="150">sleep</td>
+                <td bgcolor="#FFFFFF" valign="top" width="200">sleep    state:秒数</td>
+                <td bgcolor="#FFFFFF" valign="top" width="180">なし</td>
+            </tr>   
+            </table>
         </p>
-        <form action="newhtml.html" method="get">
-    <p><label>action ID ：<input type="number" name="mode_setting" size="3"></label></p>
-    <p><label>Pin       ：<input type="number" name="pin" size="3"></label></p>
-    <p><label>State     ：<input type="text" name="state" size="20"></label></p>
-    <input type="button" value="送信" onclick="return chk2(this.form)" /><!-- 通常ボタン -->
-</form>
-<script src="http://cdn.mlkcca.com/v2.0.0/milkcocoa.js"></script>
-<script type="text/javascript">
-    function chk2(frm){
-        var milkcocoa = new MilkCocoa('leadii5pbr0b.mlkcca.com');
-        var mode,pin;
-        var state;
-        alert(frm.elements["state"].value);
-        if(frm.elements["state"].value=="")
-            state="0";
-        else
-            state=frm.elements["state"].value;
-        
-        if(frm.elements["pin"].value=="")
-            pin=0;
-        else
-            pin=frm.elements["pin"].value;
-        if(frm.elements["mode_setting"].value==""){
-            alert("action IDを入力してください");
-        }else{
-            /* submitメソッドでフォーム送信 */
-            var ds = milkcocoa.dataStore('arduino');
-            ds.push({mode:frm.elements["mode_setting"].value,pin: pin,state:state});
-            frm.submit();
-        }
-    }
-</script>
-    </body>
+        <form action="newhtml.html" method="post">
+            <p><label>action ID ：<input type="number" name="mode_setting" size="3"></label></p>
+            <p><label>Pin       ：<input type="number" name="pin" size="3"></label></p>
+            <p><label>State     ：<input type="text" name="state" size="20"></label></p>
+            <input type="button" value="送信" onclick="return chk2(this.form)" /><!-- 通常ボタン -->
+        </form>
+        <script src="http://cdn.mlkcca.com/v2.0.0/milkcocoa.js"></script>
+        <script type="text/javascript">
+                function chk2(frm) {
+                    var milkcocoa = new MilkCocoa('leadii5pbr0b.mlkcca.com');
+                    var mode, pin;
+                    var state;
+                    alert(frm.elements["state"].value);
+                    if (frm.elements["state"].value == "")
+                        state = "0";
+                    else
+                        state = frm.elements["state"].value;
+
+                    if (frm.elements["pin"].value == "")
+                        pin = 0;
+                    else
+                        pin = frm.elements["pin"].value;
+                    if (frm.elements["mode_setting"].value == "") {
+                        alert("action IDを入力してください");
+                    } else {
+                        /* submitメソッドでフォーム送信 */
+                        var ds = milkcocoa.dataStore('arduino');
+                        ds.push({mode: frm.elements["mode_setting"].value, pin: pin, state: state});
+                        frm.submit();
+                    }
+                }
+        </script>
+</body>
 </html>
