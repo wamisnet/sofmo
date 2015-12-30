@@ -97,7 +97,7 @@ and open the template in the editor.
                     var milkcocoa = new MilkCocoa('leadii5pbr0b.mlkcca.com');
                     var mode, pin;
                     var state;
-                    alert(frm.elements["state"].value);
+                    
                     if (frm.elements["state"].value == "")
                         state = "0";
                     else
@@ -111,6 +111,7 @@ and open the template in the editor.
                         alert("action IDを入力してください");
                     } else {
                         /* submitメソッドでフォーム送信 */
+                         alert("送信します！");
                         var ds = milkcocoa.dataStore('arduino');
                         ds.push({mode: frm.elements["mode_setting"].value, pin: pin, state: state});
                         frm.submit();
